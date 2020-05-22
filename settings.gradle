@@ -1,0 +1,2 @@
+rootProject.name='JumoExampleApp'
+include ':app'
