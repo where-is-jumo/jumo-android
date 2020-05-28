@@ -157,3 +157,6 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.gitignore.io/api/macos,androidstudio
+
+app/release/*.aab
+app/debug/*.aab
