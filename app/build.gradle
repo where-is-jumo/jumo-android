@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 29
@@ -17,9 +18,20 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseCrashlytics {
+                mappingFileUploadEnabled true
+                nativeSymbolUploadEnabled true
+            }
         }
     }
 
@@ -36,4 +48,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-analytics-ktx:17.4.3'
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.0'
 }
