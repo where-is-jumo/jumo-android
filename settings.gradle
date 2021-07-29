@@ -1,2 +1,3 @@
 rootProject.name='JumoExampleApp'
 include ':app'
+include ':jumo-android-ktx'
