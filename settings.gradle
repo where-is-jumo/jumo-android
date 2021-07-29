@@ -1,4 +1,4 @@
-rootProject.name='JumoExampleApp'
+rootProject.name='JumoAndroid'
 include ':app'
 include ':jumo-android-ktx'
 include ':jumo-android-ktor'
