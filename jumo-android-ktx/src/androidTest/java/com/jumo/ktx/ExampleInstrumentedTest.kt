@@ -1,4 +1,4 @@
-package com.jumo.jumo_android_ktx
+package com.jumo.ktx
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

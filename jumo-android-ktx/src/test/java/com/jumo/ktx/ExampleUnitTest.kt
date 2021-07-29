@@ -1,4 +1,4 @@
-package com.jumo.jumo_android_ktor
+package com.jumo.ktx
 
 import org.junit.Test
 
