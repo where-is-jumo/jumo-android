@@ -1,0 +1,7 @@
+rootProject.ext.javaSourceVersion = JavaVersion.VERSION_1_8
+rootProject.ext.javaTargetVersion = JavaVersion.VERSION_1_8
+
+rootProject.ext.targetSdkVersion = 30
+rootProject.ext.compileSdkVersion = 30
+rootProject.ext.minSdkVersion = 21
+rootProject.ext.composeMinSdkVersion = 23
