@@ -28,7 +28,7 @@ android {
         targetCompatibility rootProject.javaTargetVersion
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     packagingOptions {
         exclude "DebugProbesKt.bin"
