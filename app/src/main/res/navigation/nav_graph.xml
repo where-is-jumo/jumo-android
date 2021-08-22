@@ -8,5 +8,20 @@
     android:id="@+id/navTestFragment"
     android:name="com.jumo.jumoexample.ui.NavTestFragment"
     android:label="navTestFragment"
-    tools:layout="@layout/fragment_nav_test" />
+    tools:layout="@layout/fragment_nav_test">
+    <action
+      android:id="@+id/moveToNavTest2"
+      app:destination="@id/navTest2Fragment" />
+  </fragment>
+  
+  <fragment
+    android:id="@+id/navTest2Fragment"
+    android:name="com.jumo.jumoexample.ui.NavTest2Fragment"
+    android:label="navTestFragment"
+    tools:layout="@layout/fragment_nav_test2">
+    <argument
+      android:name="title"
+      app:argType="string" />
+  </fragment>
+
 </navigation>
