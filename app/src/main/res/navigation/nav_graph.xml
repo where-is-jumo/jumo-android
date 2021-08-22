@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:id="@+id/nav_graph">
-  
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/navTestFragment">
+  <fragment
+    android:id="@+id/navTestFragment"
+    android:name="com.jumo.jumoexample.ui.NavTestFragment"
+    android:label="navTestFragment"
+    tools:layout="@layout/fragment_nav_test" />
 </navigation>
