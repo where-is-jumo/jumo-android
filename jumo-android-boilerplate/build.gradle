@@ -49,4 +49,7 @@ dependencies {
 
     api "androidx.fragment:fragment-ktx:$fragment_version"
     api "androidx.activity:activity-ktx:$activity_version"
+
+    api "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    api "androidx.navigation:navigation-ui-ktx:$nav_version"
 }
