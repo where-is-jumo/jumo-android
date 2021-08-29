@@ -40,6 +40,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":jumo-android-ktor")
@@ -55,4 +59,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "com.google.android.gms:play-services-oss-licenses:$ossl_version"
+
+    implementation "com.airbnb.android:epoxy:$epoxy_version"
+    implementation "com.airbnb.android:epoxy-databinding:$epoxy_version"
+    implementation "com.airbnb.android:epoxy-glide-preloading:$epoxy_version"
+    kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 }
