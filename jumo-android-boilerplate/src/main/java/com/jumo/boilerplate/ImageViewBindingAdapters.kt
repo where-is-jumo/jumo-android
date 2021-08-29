@@ -9,7 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
 
 object ImageViewBindingAdapters {
-  @BindingAdapter("app:glide_imageUrl", "app:glide_placeholder", requireAll = false)
+  @BindingAdapter("glide_imageUrl", "glide_placeholder", requireAll = false)
   @JvmStatic
   fun ImageView.loadImage(url: String?, placeholder: Drawable?) {
     Glide.with(this.context)
