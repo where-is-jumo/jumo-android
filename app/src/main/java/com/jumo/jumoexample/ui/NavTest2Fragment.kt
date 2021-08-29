@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
+import com.airbnb.epoxy.EpoxyRecyclerView
 import com.jumo.jumoexample.R
 
 class NavTest2Fragment : Fragment() {
@@ -21,6 +22,8 @@ class NavTest2Fragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    view.findViewById<TextView>(R.id.viewText).text = arg.title
+    val epoxy = view.findViewById<EpoxyRecyclerView>(R.id.viewEpoxyList)
+    epoxy.withModels {
+    }
   }
 }
