@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:viewBindingIgnore="true">
+  
+  <data>
+    <variable
+      name="title"
+      type="String" />
+    
+    <variable
+      name="imageUrl"
+      type="String" />
+    
+    <variable
+      name="onClickItem"
+      type="android.view.View.OnClickListener" />
+  </data>
+  
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eee"
+    android:onClick="@{onClickItem}"
+    android:padding="8dp">
+    
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/viewImage"
+      android:layout_width="96dp"
+      android:layout_height="96dp"
+      app:glide_imageUrl="@{imageUrl}"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+    
+    <TextView
+      android:id="@+id/viewTitle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="4dp"
+      android:text="@{title}"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/viewImage"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="이름" />
+  
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
