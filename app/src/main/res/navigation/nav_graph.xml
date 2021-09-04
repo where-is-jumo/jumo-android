@@ -23,5 +23,17 @@
       android:name="title"
       app:argType="string" />
   </fragment>
+  
+  <fragment
+    android:id="@+id/navExample2Fragment"
+    android:name="com.jumo.jumoexample.ui.Example2Fragment"
+    android:label="Example2Fragment"
+    tools:layout="@layout/fragment_nav_test" />
+  
+  <fragment
+    android:id="@+id/navExample3Fragment"
+    android:name="com.jumo.jumoexample.ui.Example3Fragment"
+    android:label="Example3Fragment"
+    tools:layout="@layout/fragment_nav_test" />
 
 </navigation>

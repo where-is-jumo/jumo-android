@@ -1,9 +1,12 @@
 package com.jumo.jumoexample
 
-import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.jumo.ktx.gone
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,5 +17,23 @@ class MainActivity : AppCompatActivity() {
     setContentView(R.layout.activity_main)
 
 //    startActivity(Intent(this, OssLicensesMenuActivity::class.java))
+    val navHostFragment =
+      supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+    val navController = navHostFragment.navController
+    val viewBottomNavigation = findViewById<BottomNavigationView>(R.id.viewBottomNav)
+    viewBottomNavigation.setupWithNavController(navController)
+
+    val mainDestinations = setOf(
+      R.id.navTestFragment,
+      R.id.navExample2Fragment,
+      R.id.navExample3Fragment
+    )
+    navController.addOnDestinationChangedListener { _, destination, _ ->
+      viewBottomNavigation.visibility = when (destination.id) {
+        in mainDestinations -> View.VISIBLE
+        else -> View.GONE
+      }
+    }
   }
+
 }
