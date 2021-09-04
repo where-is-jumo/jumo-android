@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   
   <item
-    android:id="@+id/navExample1"
-    android:title="Example1" />
+    android:id="@+id/navTestFragment"
+    android:title="NavTest" />
   
   <item
-    android:id="@+id/navExample2"
+    android:id="@+id/navExample2Fragment"
     android:title="Example2" />
   
   <item
-    android:id="@+id/navExample3"
+    android:id="@+id/navExample3Fragment"
     android:title="Example3" />
 
 </menu>
