@@ -12,13 +12,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.NavTestFragment">
     
-    <com.airbnb.epoxy.EpoxyRecyclerView
-      android:id="@+id/viewEpoxyList"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:padding="8dp"
-      app:itemSpacing="8dp"
-      tools:listitem="@layout/epoxy_list_item_example" />
+    <TextView
+      android:id="@+id/viewHelloWrold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Example2"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
   
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
