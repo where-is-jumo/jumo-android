@@ -1,6 +1,7 @@
 package com.jumo.jumoexample
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -21,6 +22,18 @@ class MainActivity : AppCompatActivity() {
     val navController = navHostFragment.navController
     val viewBottomNavigation = findViewById<BottomNavigationView>(R.id.viewBottomNav)
     viewBottomNavigation.setupWithNavController(navController)
+
+    val mainDestinations = setOf(
+      R.id.navTestFragment,
+      R.id.navExample2Fragment,
+      R.id.navExample3Fragment
+    )
+    navController.addOnDestinationChangedListener { _, destination, _ ->
+      viewBottomNavigation.visibility = when (destination.id) {
+        in mainDestinations -> View.VISIBLE
+        else -> View.GONE
+      }
+    }
   }
 
 }
