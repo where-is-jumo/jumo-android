@@ -5,6 +5,10 @@ import io.ktor.client.HttpClient
 import io.ktor.client.features.defaultRequest
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
+import io.ktor.client.features.logging.LogLevel
+import io.ktor.client.features.logging.Logger
+import io.ktor.client.features.logging.Logging
+import io.ktor.client.features.logging.SIMPLE
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.header
 import io.ktor.client.request.parameter
@@ -50,13 +54,13 @@ object JumoApi {
         ignoreUnknownKeys = true
       })
     }
-//    install(Logging) {
-//      logger = Logger.SIMPLE
-//      level = when {
-//        BuildConfig.DEBUG -> LogLevel.ALL
-//        else -> LogLevel.ALL
-//      }
-//    }
+    install(Logging) {
+      logger = Logger.SIMPLE
+      level = when {
+        BuildConfig.DEBUG -> LogLevel.ALL
+        else -> LogLevel.NONE
+      }
+    }
   }
 
   suspend inline fun <reified DATA, ERROR_DATA> HttpClient.request(
@@ -67,7 +71,7 @@ object JumoApi {
     contentType: ContentType = ContentType.Application.Json,
     appendHeader: Map<String, Any> = emptyMap(),
   ): Flow<ApiState<DATA, ERROR_DATA>> = flow {
-    runCatching {
+    kotlin.runCatching {
       emit(ApiState.Loading<DATA, ERROR_DATA>())
 
       this@request.request<DATA> {
