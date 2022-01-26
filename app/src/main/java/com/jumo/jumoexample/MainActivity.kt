@@ -3,6 +3,7 @@ package com.jumo.jumoexample
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -22,7 +23,7 @@ class MainActivity : JumoActivity<ActivityMainBinding>(
 ) {
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    setTheme(R.style.AppTheme)
+    installSplashScreen()
     super.onCreate(savedInstanceState)
     setBottomNavigation(binding.viewBottomNav)
   }
