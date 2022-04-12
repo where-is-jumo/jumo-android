@@ -46,6 +46,7 @@ kapt {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":jumo-android-auth")
     implementation project(":jumo-android-ktor")
     implementation project(":jumo-android-boilerplate")
 
