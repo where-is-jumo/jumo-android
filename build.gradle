@@ -4,7 +4,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$android_build_tools"
@@ -18,10 +18,12 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
     }
 }
 
 subprojects { project ->
+    apply from: "$rootDir/config.gradle"
     apply from: "$rootDir/version.gradle"
 }
 
