@@ -1,3 +1,4 @@
 def api_config = [:]
 api_config.kakao = ""
+api_config.google_server = ""
 ext.api_config = api_config
